@@ -33,13 +33,14 @@ main{
 }
 .main-header{
   margin-bottom: 2rem;
+  line-height: 1.2;
 }
 
 .form{
   background-color: var(--bg-dark);
   padding: 20px;
   max-width: 600px;
-  width: 100%;
+  width: 90%;
   margin-bottom: 2rem;
 }
 fieldset{
@@ -87,6 +88,9 @@ legend{
   font-size: 0.9rem;
   text-align: left;
 }
+.instr-section p::before {
+  content: "--";
+}
 .instr-1{
   background-color: var(--bg-light);
   padding: 0.8rem;
@@ -100,6 +104,7 @@ legend{
 .emphasis, .explanation, code{
   padding: 0 5px;
   border-radius: 3px;
+  word-break: break-all;
 }
 .emphasis{
   background-color: var(--bg-dark);
