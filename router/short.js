@@ -11,8 +11,9 @@ router.post('/', async (req, res) => {
     const shortCode = shortid.generate();
   
     if(validUrl.isUri(longUrl)){
-      const testUrl = longUrl.split('://')[1];
-      dns.resolve(testUrl,'A', async (err, records) => {
+      // const testUrl = longUrl.split('://')[1];
+      const hostname = longUrl.split('://')[1].split('/')[0];
+      dns.lookup(hostname, async (err, address) => {
         if(err){
           return res.status(400).json({error: "invalid hostname"});
         } else {

@@ -12,21 +12,36 @@
   </head>
 
   <body>
-    <h1>URL Shortener Microservice</h1>
     <main>
-      <section>
-        <form action="api/short" method="POST">
-          <fieldset>
-            <legend>URL Shortener</legend>
-            <label for="url_input">URL:</label>
-            <input id="url_input" type="text" name="url" placeholder="insert URL" />
-            <input type="submit" value="POST URL" />
-          </fieldset>
-        </form>
+      <h1 class="main-header">URL Shortener Microservice</h1>
+      <form action="api/short" method="POST" class="form">
+        <fieldset>
+          <legend>URL Shortener</legend>
+          <div class="input-container">
+            <input id="url_input" type="text" name="url" placeholder="insert URL" class="url-input"/>
+            <input type="submit" value="POST URL" class="btn"/>
+          </div>
+        </fieldset>
+      </form>
+      <section class="instr-section">
+        <div class='instr-1'>
+          <p>Your URL must be of the following format: <span class="emphasis">scheme://hostname/path?query</span></p>
+          <p><span class="emphasis">scheme</span> can be either <span class="explanation">http</span> or <span class="explanation">https</span></p>
+          <p><span class="emphasis">hostname</span> is the name of the website (e.g. <span class="explanation">wikipedia.org</span>, <span class="explanation">freecodecamp.org</span>, etc.)</p>
+          <p><span class="emphasis">path</span> is the location of a specific resource on the website. For example, the address of the cabbage page on Wikipedia is the following: <span class="explanation">https://en.wikipedia.org/wiki/Cabbage</span>. The <span class="emphasis">path</span> would be <span class="explanation">/wiki/Cabbage</span> in this case. The <span class="emphasis">path</span> is not mandatory for the URL Shortener to work.</p>
+          <p><span class="emphasis">query</span> is a string of information provided by the client and used by the resource for multiple purposes(e.g. searching). Example of query string <span class="explanation">results?search_query=yoghurt&sp=EgYIBBABGAM%253D</span>. The <span class="emphasis">query</span> is not mandatory for the URL Shortener to work.</p>
+        </div>
+        <div class="instr-2">
+          <p>The response will look something like this:</p>
+          <code>
+            { "original_url": "https://www.wikipedia.org/wiki/Sledgehammer", "short_url": "eskeskeske"}
+          </code>
+          <p>To verify that the short URL is working, copy and paste the value of <code>"short_url"</code> after the <span class="explanation">/api/short/</span> in the address bar(i.e. <span class="explanation">/api/short/eskeskeske</span>)</p>
+        </div>
       </section>
     </main>
     <footer>
-      <p>By <a href="https://www.freecodecamp.org/">freeCodeCamp</a></p>
+      <p>By <a href="https://github.com/isimeri" class='contact-link'>isimeri</a></p>
     </footer>
   </body>
 </html>
